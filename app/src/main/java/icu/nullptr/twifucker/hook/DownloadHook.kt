@@ -567,7 +567,7 @@ object DownloadHook : BaseHook() {
         val tweetIdField =
             tweetResultField.type.declaredFields.first { it.type == Long::class.java }
         val resultField = tweetResultField.type.declaredFields.groupBy { it.type }
-            .filter { it.value.size == 2 && it.key.declaredFields.size == 3 }.map { it.value[1] }[0]
+            .filter { it.value.size == 2 && it.key.declaredFields.size == 4 }.map { it.value[1] }[0]
             ?: throw NoSuchFieldError()
         val legacyField =
             resultField.type.declaredFields.filter { it.isNotStatic }.maxByOrNull { it.name }

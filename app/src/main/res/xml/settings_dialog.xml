@@ -74,7 +74,6 @@
 
     <PreferenceCategory android:title="@string/settings_experimental">
         <SwitchPreference
-            android:enabled="false"
             android:key="enable_download_hook"
             android:summary="@string/enable_download_hook_summary"
             android:title="@string/enable_download_hook" />

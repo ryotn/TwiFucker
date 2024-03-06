@@ -109,5 +109,4 @@ Force enable/disable Twitter experimental feature.
 [![Stargazers over time](https://starchart.cc/Dr-TSNG/TwiFucker.svg)](https://starchart.cc/Dr-TSNG/TwiFucker)
 
 ## TODO
-[ ] DownloadHook
 [ ] HomeTimelineHook

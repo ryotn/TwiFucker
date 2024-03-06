@@ -100,7 +100,7 @@ class HookEntry : IXposedHookZygoteInit, IXposedHookLoadPackage {
                         SettingsHook,
                         UrlHook,
                         SelectableTextHook,
-                        //DownloadHook,
+                        DownloadHook,
                         ActivityHook,
                         CustomTabsHook,
                         DrawerNavbarHook,
