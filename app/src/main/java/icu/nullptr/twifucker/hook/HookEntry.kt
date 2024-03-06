@@ -100,13 +100,13 @@ class HookEntry : IXposedHookZygoteInit, IXposedHookLoadPackage {
                         SettingsHook,
                         UrlHook,
                         SelectableTextHook,
-                        DownloadHook,
+                        //DownloadHook,
                         ActivityHook,
-                        CustomTabsHook,
-                        DrawerNavbarHook,
+                        //CustomTabsHook,
+                        //DrawerNavbarHook,
                         FeatureSwitchHook,
                         ViewHook,
-                        HomeTimelineHook,
+                        //HomeTimelineHook,
                     )
 
                     if (modulePrefs.getBoolean("use_legacy_hook", false)) {
