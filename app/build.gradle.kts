@@ -58,9 +58,9 @@ fun findInPath(executable: String): String? {
 
 android {
     namespace = "icu.nullptr.twifucker"
-    compileSdk = 33
-    ndkVersion = "25.2.9519653"
-    buildToolsVersion = "33.0.2"
+    compileSdk = 34
+    ndkVersion = "26.1.10909125"
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId = "icu.nullptr.twifucker"
