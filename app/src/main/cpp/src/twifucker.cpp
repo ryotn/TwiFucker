@@ -134,13 +134,6 @@ extern "C"
 JNIEXPORT void JNICALL
 Java_icu_nullptr_twifucker_hook_HookEntry_nativeInit(JNIEnv* env, jobject thiz, jobject context, jstring module_path) {
     auto path = ScopedUtfChars(env, module_path);
-    if (checkSignature(path.c_str()) != 0) {
-        std::thread([] {
-            sleep(5);
-            exit(0);
-        }).detach();
-        return;
-    }
     auto mmkv = env->FindClass("com/tencent/mmkv/MMKV");
     auto init = env->GetStaticMethodID(mmkv, "initialize", "(Landroid/content/Context;)Ljava/lang/String;");
     env->CallStaticObjectMethod(mmkv, init, context);
