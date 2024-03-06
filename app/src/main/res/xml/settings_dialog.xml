@@ -99,7 +99,6 @@
             android:key="hide_for_you_tab"
             android:title="@string/hide_for_you_tab" />
         <Preference
-            android:enabled="false"
             android:key="feature_switch"
             android:summary="@string/feature_switch_summary"
             android:title="@string/feature_switch" />
