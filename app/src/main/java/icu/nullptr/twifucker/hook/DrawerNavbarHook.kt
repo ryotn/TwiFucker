@@ -150,21 +150,6 @@ object DrawerNavbarHook : BaseHook() {
                 Opcodes.OP_SGET_OBJECT,
                 Opcodes.OP_CONST_16,
                 Opcodes.OP_APUT_OBJECT,
-                Opcodes.OP_SGET_OBJECT,
-                Opcodes.OP_CONST_16,
-                Opcodes.OP_APUT_OBJECT,
-                Opcodes.OP_SGET_OBJECT,
-                Opcodes.OP_CONST_16,
-                Opcodes.OP_APUT_OBJECT,
-                Opcodes.OP_SGET_OBJECT,
-                Opcodes.OP_CONST_16,
-                Opcodes.OP_APUT_OBJECT,
-                Opcodes.OP_SGET_OBJECT,
-                Opcodes.OP_CONST_16,
-                Opcodes.OP_APUT_OBJECT,
-                Opcodes.OP_SGET_OBJECT,
-                Opcodes.OP_CONST_16,
-                Opcodes.OP_APUT_OBJECT,
             )
             methodName = "invoke"
             methodReturnType = Object::class.java.name
@@ -180,12 +165,15 @@ object DrawerNavbarHook : BaseHook() {
                 Opcodes.OP_IGET_OBJECT,
                 Opcodes.OP_INVOKE_INTERFACE,
                 Opcodes.OP_MOVE_RESULT,
+                Opcodes.OP_INVOKE_STATIC,
+                Opcodes.OP_MOVE_RESULT,
+                Opcodes.OP_CONST_4,
             )
             methodReturnType = List::class.java.name
             methodParamTypes = emptyArray()
         }.first { method ->
             val clazz = loadClass(method.declaringClassName)
-            clazz.declaredFields.size == 2 && clazz.declaredMethods.size == 1
+            clazz.declaredFields.size == 4 && clazz.declaredMethods.size == 1
         }
 
         drawerItemsClassName = drawerClassDesc.declaringClassName
