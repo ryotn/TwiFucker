@@ -83,7 +83,6 @@
             android:key="download_directory"
             android:title="@string/download_directory" />
         <SwitchPreference
-            android:enabled="false"
             android:key="disable_url_redirect"
             android:summary="@string/disable_url_redirect_summary"
             android:title="@string/disable_url_redirect" />

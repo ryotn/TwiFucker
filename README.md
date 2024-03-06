@@ -110,6 +110,5 @@ Force enable/disable Twitter experimental feature.
 
 ## TODO
 [ ] DownloadHook
-[ ] CustomTabsHook
 [ ] DrawerNavbarHook
 [ ] HomeTimelineHook
