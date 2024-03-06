@@ -26,7 +26,7 @@ object JsonTimelineModuleHook : BaseHook() {
         val moduleField =
             FieldFinder.fromClass(jsonClientEventInfoClass).filterByType(String::class.java).first()
 
-        MethodFinder.fromClass(jsonTimelineModuleMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonTimelineModuleMapperClass).filterByName("parse")
             .filterByReturnType(jsonTimelineModuleClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

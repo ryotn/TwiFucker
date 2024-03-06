@@ -32,7 +32,7 @@ object JsonTimelineUserHook : BaseHook() {
             FieldFinder.fromClass(jsonTimelineUserClass).filterByType(jsonPromotedContentUrtClass)
                 .first()
 
-        MethodFinder.fromClass(jsonTimelineUserMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonTimelineUserMapperClass).filterByName("parse")
             .filterByReturnType(jsonTimelineUserClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

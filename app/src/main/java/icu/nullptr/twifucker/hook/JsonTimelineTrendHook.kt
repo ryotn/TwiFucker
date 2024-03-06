@@ -30,7 +30,7 @@ object JsonTimelineTrendHook : BaseHook() {
         val jsonPromotedTrendMetadataField = FieldFinder.fromClass(jsonTimelineTrendClass)
             .filterByType(jsonPromotedTrendMetadataClass).first()
 
-        MethodFinder.fromClass(jsonTimelineTrendMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonTimelineTrendMapperClass).filterByName("parse")
             .filterByReturnType(jsonTimelineTrendClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

@@ -35,7 +35,7 @@ object JsonTimelineTweetHook : BaseHook() {
             FieldFinder.fromClass(jsonTimelineTweetClass).filterByType(jsonPromotedContentUrtClass)
                 .first()
 
-        MethodFinder.fromClass(jsonTimelineTweetMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonTimelineTweetMapperClass).filterByName("parse")
             .filterByReturnType(jsonTimelineTweetClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

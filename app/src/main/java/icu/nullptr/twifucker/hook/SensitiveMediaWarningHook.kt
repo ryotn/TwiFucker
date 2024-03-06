@@ -23,7 +23,7 @@ object SensitiveMediaWarningHook : BaseHook() {
         val warningFields =
             FieldFinder.fromClass(jsonSensitiveMediaWarningClass).filterByType(Boolean::class.java)
 
-        MethodFinder.fromClass(jsonSensitiveMediaWarningMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonSensitiveMediaWarningMapperClass).filterByName("parse")
             .filterByReturnType(jsonSensitiveMediaWarningClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

@@ -23,7 +23,7 @@ object JsonTimelineEntryHook : BaseHook() {
         val contentField =
             FieldFinder.fromClass(jsonTimelineEntryClass).filter { type.isInterface }.first()
 
-        MethodFinder.fromClass(jsonTimelineEntryMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonTimelineEntryMapperClass).filterByName("parse")
             .filterByReturnType(jsonTimelineEntryClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

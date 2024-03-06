@@ -23,7 +23,7 @@ object JsonFleetsTimelineResponseHook : BaseHook() {
         val threadsField = FieldFinder.fromClass(jsonFleetsTimelineResponseClass)
             .filterByType(ArrayList::class.java).first()
 
-        MethodFinder.fromClass(jsonFleetsTimelineResponseMapperClass).filterByName("_parse")
+        MethodFinder.fromClass(jsonFleetsTimelineResponseMapperClass).filterByName("parse")
             .filterByReturnType(jsonFleetsTimelineResponseClass).first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure

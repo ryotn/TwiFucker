@@ -26,7 +26,7 @@ object JsonProfileRecommendationModuleResponseHook : BaseHook() {
                 .filterByType(ArrayList::class.java).first()
 
         MethodFinder.fromClass(jsonProfileRecommendationModuleResponseMapperClass)
-            .filterByName("_parse").filterByReturnType(jsonProfileRecommendationModuleResponseClass)
+            .filterByName("parse").filterByReturnType(jsonProfileRecommendationModuleResponseClass)
             .first().createHook {
                 afterMeasure(name) { param ->
                     param.result ?: return@afterMeasure
