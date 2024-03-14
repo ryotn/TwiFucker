@@ -261,7 +261,7 @@ object DownloadHook : BaseHook() {
 
                     val tweetResult =
                         XposedHelpers.getObjectField(tweetResults, tweetResultFieldName)
-                    val tweetId = XposedHelpers.getLongField(tweetResult, tweetIdFieldName)
+                    val tweetId = XposedHelpers.callMethod(tweetResult, "getId") as Long
                     val result = XposedHelpers.getObjectField(tweetResult, resultFieldName)
                     val legacy = XposedHelpers.getObjectField(result, legacyFieldName)
                     val extendedEntities =
