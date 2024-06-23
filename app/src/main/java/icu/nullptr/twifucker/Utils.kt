@@ -81,7 +81,7 @@ fun writeJsonLog(content: String) {
 fun isEntryNeedsRemove(entryId: String): Boolean {
     // promoted tweet
     // "superhero-superhero" == promoted trend
-    if ((entryId.startsWith("promotedTweet-") || entryId.startsWith("superhero-")) && modulePrefs.getBoolean(
+    if ((entryId.startsWith("promotedTweet-") || entryId.startsWith("superhero-") || entryId.startsWith("rtb-image-ad-")) && modulePrefs.getBoolean(
             "disable_promoted_content", true
         )
     ) {
